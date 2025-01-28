@@ -11,8 +11,115 @@
 </head>
 
 <body>
-  <a href="/home.html">home</a>
-  <h2 class="text-2xl font-bold text-green-600">Hello</h2>
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex items-center">
+        <img src="/path-to-crown-image.svg" alt="Crown" class="h-8 w-8 mr-2">
+        <h1 class="text-2xl font-semibold">UK Visas & Immigration</h1>
+      </div>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="bg-[#1d4f91] text-white py-2 px-4">
+    <div class="container mx-auto">
+      You are here > Sponsorship management system > SMS log in
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mx-auto mt-8 flex">
+    <!-- Left Sidebar -->
+    <div class="w-1/4 pr-8">
+      <nav class="space-y-2">
+        <a href="/" class="block text-blue-600 hover:underline">Home</a>
+        <a href="home.html" class="block text-blue-600 hover:underline">Log in</a>
+        <a href="#" class="block text-blue-600 hover:underline">Contact</a>
+      </nav>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="w-2/3">
+      <h2 class="text-2xl font-bold mb-2">SMS log in</h2>
+      <p class="mb-1">You must hold a sponsor licence to be able to log into SMS.</p>
+      <p class="mb-1">
+        If you don't hold a licence or you want to add a route to an existing licence, please use the
+        <a href="#" class="text-blue-600 hover:underline">sponsor application</a>.
+      </p>
+      <p class="mb-1">
+        To log into SMS, enter your SMS user ID and password. You <span class="font-bold">MUST</span> be an appointed
+        Level 1 or 2 user to access SMS and to use any functions in the system. Misuse of SMS user IDs may lead to
+        action being taken against you.
+      </p>
+      <p class="mb-1">
+        If you are copying and pasting your user ID and/or password, please ensure that spaces are not included at the
+        end. If you enter an incorrect user ID or password three times, your account will be locked for approximately 20
+        minutes. If this occurs, you should try again later.
+      </p>
+      <p class="mb-1">
+        You must have Javascript enabled on your browser and a PDF viewer installed to use some functions in SMS.
+      </p>
+      <p class="mb-1 font-bold">
+        You must never share your SMS user ID and/or password with another person. Misuse of SMS user IDs and/or
+        passwords may lead to action being taken against you.
+      </p>
+
+      <!-- Login Form -->
+      <div class="bg-gray-200 p-3 mt-1">
+        <h3 class="font-bold mb-1">SMS log in</h3>
+        <form class="space-y-4" id="loginForm" onsubmit="handleLogin(event)">
+          <div class="flex">
+            <label class="w-32">User ID:</label>
+            <input type="text" id="userId" class="border border-gray-300 px-2 py-1 w-64">
+          </div>
+          <div class="flex">
+            <label class="w-32">Password:</label>
+            <input type="password" id="password" class="border border-gray-300 px-2 py-1 w-64">
+          </div>
+          <div class="flex justify-end space-x-2">
+            <button type="button" class="bg-[#1d4f91] text-white px-4 py-2">Cancel</button>
+            <button type="submit" class="bg-[#1d4f91] text-white px-4 py-2">Log in</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Right Sidebar -->
+    <div class="w-1/4 pl-8">
+      <div class="bg-gray-100 p-4">
+        <h3 class="font-bold mb-2">SEE ALSO</h3>
+        <ul class="space-y-2">
+          <li><a href="#" class="text-blue-600 hover:underline">SMS user guides (opens in a new window)</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Information for sponsors (opens in a new window)</a>
+          </li>
+          <li><a href="#" class="text-blue-600 hover:underline">Accessibility Statement (opens in a new window)</a></li>
+          <li><a href="#" class="text-blue-600 hover:underline">Cookie Statement (opens in a new window)</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add this script before closing body tag -->
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+
+      const userId = document.getElementById('userId').value;
+      const password = document.getElementById('password').value;
+
+      if (userId === '119600' && password === 'juba1234') {
+        // Using a simple form submission instead of JavaScript navigation
+        const form = document.createElement('form');
+        form.method = 'GET';
+        form.action = '/second.html';
+        document.body.appendChild(form);
+        form.submit();
+      } else {
+        alert('Invalid credentials. Please try again.');
+      }
+    }
+  </script>
   <script src="assets/js/app.js"></script>
 </body>
 
